@@ -176,6 +176,7 @@ const generateAuditReport = async () => {
 };
 
 const generateOutdatedReport = async () => {
+  const startTime = new Date().getTime();
   const { stderr: outdatedError, stdout: outdatedJson } = spawnSync("npm", [
     "outdated",
     "--json",
