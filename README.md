@@ -17,7 +17,6 @@ pipelines:
 Have a look at this [example pull request](https://bitbucket.org/saibotsivad/test-bpr-npm-audit/pull-requests/1/fix-maybe-setting-the-proxy-is-better), which generates a report like this:
 
 ![Example report image](./example-report.png)
-![Example report image](./example-report-1.png)
 
 ## security
 
