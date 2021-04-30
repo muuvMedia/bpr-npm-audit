@@ -95,3 +95,4 @@ This project is published and released under the [Very Open License](http://very
 ---
 
 (Made with ❤️ by [Tobias Davis](https://davistobias.com)
+(Npm outdated support added by [Tom Thresher](https://muuvmedia.com)
