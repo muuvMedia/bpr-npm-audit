@@ -1,8 +1,10 @@
-# bpr-npm-audit
+# bpr-npm-package-audit
+
+This module is built from bpr-npm-audit and adds npm outdated to the report
 
 Bitbucket Pipelines added [reports](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) as a feature in pull requests.
 
-With this module, you can get the results of `npm audit` as a report, with *zero configuration*, using `npx`:
+With this module, you can get the results of `npm audit` & `npm outdated` as a report, with *zero configuration*, using `npx`:
 
 ```yaml
 pipelines:
@@ -74,10 +76,22 @@ Configure by setting the environment variable `BRP_LEVEL` to one of these option
 
 If there are any vulnerabilities at that level or higher, the report will be marked as failed.
 
+### include outdated
+
+An env variable `BPR_INCLUDE_OUTDATED` boolean representing whether to include npm outdated in the report.
+
+Default: `false`
+
+### major version threshold
+
+An env variable `BPR_VERSION_THRESHOLD` representing the major version threshold for outdated packages.
+
+Default: `1`
+
 ## license
 
 This project is published and released under the [Very Open License](http://veryopenlicense.com).
 
 ---
 
-(Made with ❤️ by [Tobias Davis](https://davistobias.com).)
+(Made with ❤️ by [Tobias Davis](https://davistobias.com)

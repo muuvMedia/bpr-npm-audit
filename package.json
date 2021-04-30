@@ -13,6 +13,13 @@
     "report"
   ],
   "author": "saibotsivad",
+  "contributors": [
+    {
+      "name": "Tom Thresher",
+      "email": "tomjthresher@gmail.com",
+      "url": "https://muuvmedia.com/"
+    }
+  ],
   "license": "VOL",
   "bugs": {
     "url": "https://github.com/saibotsivad/bpr-npm-audit/issues"
