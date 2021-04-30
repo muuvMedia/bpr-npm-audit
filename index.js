@@ -187,10 +187,11 @@ const pushAllReports = async () => {
   }
 
 	if (includeNpmOutdated){
+    let idx = 0;
 		for (const [key, value] of Object.entries(outdatedPackages)) {
       const { current, wanted, latest, location } = value;
-
-      await push(`${baseUrl}/annotations/${reportId}-${key}`, {
+      idx+=1;
+      await push(`${baseUrl}/annotations/${reportId}-${idx}`, {
         annotation_type: "VULNERABILITY",
         summary: `${key}: is outdated`,
         details: `Current: ${current} 
