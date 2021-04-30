@@ -191,12 +191,12 @@ const pushAllReports = async () => {
       const { current, wanted, latest, location } = value;
 
       await push(`${baseUrl}/annotations/${reportId}-${key}`, {
-        annotation_type: "WARNING",
+        annotation_type: "CODE_SMELL",
         summary: `${key}: is outdated`,
         details: `Current: ${current} 
       						Wanted: ${wanted} 
-      						Latest: ${latest}`,
-        link: location,
+      						Latest: ${latest}
+									Location: ${location}`,
         severity: getOutdatedSeverity({ current, latest }),
       });
     }
