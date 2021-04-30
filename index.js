@@ -190,7 +190,7 @@ const pushAllReports = async () => {
 		for (const [key, value] of Object.entries(outdatedPackages)) {
       const { current, wanted, latest, location } = value;
 
-      await push(`${baseUrl}/annotations/${reportId}`, {
+      await push(`${baseUrl}/annotations/${reportId}-${key}`, {
         annotation_type: "VULNERABILITY",
         summary: `${key}: is outdated`,
         details: `Current: ${current} 
