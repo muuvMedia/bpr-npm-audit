@@ -37,8 +37,8 @@ const reportName = process.env.BPR_NAME || "Security: npm audit";
 const reportId = process.env.BPR_ID || "npmaudit";
 const proxyHost = PROXY_TYPES[process.env.BPR_PROXY || "local"];
 const auditLevel = process.env.BPR_LEVEL || "high";
-const majorVersionThreshold = process.env.VERSION_THRESHOLD || 1;
-const includeNpmOutdated = process.env.INCLUDE_OUTDATED || false;
+const majorVersionThreshold = process.env.BPR_VERSION_THRESHOLD || 1;
+const includeNpmOutdated = process.env.BPR_INCLUDE_OUTDATED || false;
 
 if (!ORDERED_LEVELS.includes(auditLevel)) {
   console.error("Unsupported audit level.");
@@ -77,9 +77,9 @@ if (stderr.toString()) {
 const audit = JSON.parse(stdout.toString());
 
 const { stderr: outdatedError, stdout: outdatedJson } = spawnSync("npm", [
-  "outdated",
-  "--json",
-]);
+    "outdated",
+    "--json",
+  ]);
 
 if (outdatedError.toString()) {
   console.error(
