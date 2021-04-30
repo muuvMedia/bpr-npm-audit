@@ -197,7 +197,7 @@ const generateOutdatedReport = async () => {
         latest: outdatedPackages[key].latest,
       }) > majorVersionThreshold
   );
-  const reportName = "Package Version check: npm outdated";
+  const reportName = "Outdated: npm outdated";
   const reportId = "npmoutdated";
   const baseUrl = getBaseUrl(reportId);
   await push(baseUrl, {
@@ -226,7 +226,7 @@ const generateOutdatedReport = async () => {
     idx += 1;
     await push(`${baseUrl}/annotations/${reportId}-${idx}`, {
       annotation_type: "VULNERABILITY",
-      summary: `${key}: is outdated`,
+      summary: `${key} is outdated`,
       details: `Current: ${current} 
       						Wanted: ${wanted} 
       						Latest: ${latest}
